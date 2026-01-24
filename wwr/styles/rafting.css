@@ -1,0 +1,112 @@
+/* rafting.css */
+
+/* Define CSS variables in :root */
+:root {
+  --primary-color: #055a05;       /* Forest green */
+  --accent1-color: #102e3a;       /* Dark slate blue */
+  --accent2-color: #e9c46e;       /* Light golden yellow */
+  --background-color: #ecf0f1;    /* Light gray background */
+  --text-color: #2c3e50;          /* Primary text color */
+  --heading-font: 'Georgia', serif;
+  --body-font: 'Arial', sans-serif;
+}
+
+/* Reset box model */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+  font-family: var(--body-font);
+  color: var(--accent1-color);
+  background-color: var(--background-color);
+}
+
+/* Center layout */
+header, main, footer {
+  width: 840px;
+  margin: 0 auto;
+}
+
+/* Headings */
+h1, h2 {
+  font-family: var(--heading-font);
+  color: var(--primary-color);
+}
+
+/* Consistent spacing */
+nav, p, section, article {
+  margin: 16px;
+  padding: 8px;
+}
+
+/* Remove underline from social media image links */
+footer .social-media a {
+  text-decoration: none;
+}
+
+/* Hero section */
+.hero {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Overlay heading on hero */
+h1 {
+  position: absolute;
+  top: 20px;
+  width: 100%;
+  padding: 16px;
+  text-align: center;
+  opacity: 0.7;
+  background-color: var(--accent1-color);
+  color: #fff;
+  font-size: 2.5rem;
+  z-index: 2;
+}
+
+/* Article inside main (not inside hero) */
+article img {
+  float: right;
+  width: 125px;
+  margin: 0 0 16px 16px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Optional: Clear floats in article */
+article::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Footer styling */
+footer {
+  margin-top: 32px;
+  text-align: center;
+  padding-top: 16px;
+  border-top: 1px solid var(--accent1-color);
+}
+
+footer p {
+  margin-bottom: 12px;
+}
+
+/* Social media icons */
+.social-media img {
+  width: 32px;
+  height: 32px;
+  margin: 0 8px;
+  vertical-align: middle;
+}
