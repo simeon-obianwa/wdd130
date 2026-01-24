@@ -1,12 +1,10 @@
 /* rafting.css */
 
-/* Define CSS variables in :root */
+/* Define only the CSS variables that are actually used */
 :root {
-  --primary-color: #055a05;       /* Forest green */
-  --accent1-color: #102e3a;       /* Dark slate blue */
-  --accent2-color: #e9c46e;       /* Light golden yellow */
+  --primary-color: #055a05;       /* Dark green */
+  --accent1-color: #102e3a;       /* Deep teal */
   --background-color: #ecf0f1;    /* Light gray background */
-  --text-color: #2c3e50;          /* Primary text color */
   --heading-font: 'Georgia', serif;
   --body-font: 'Arial', sans-serif;
 }
@@ -37,74 +35,91 @@ h1, h2 {
   color: var(--primary-color);
 }
 
-/* Consistent spacing */
-nav, p, section, article {
+/* Consistent spacing for block elements */
+nav, p, section {
   margin: 16px;
   padding: 8px;
 }
 
-/* Remove underline from social media image links */
-footer .social-media a {
-  text-decoration: none;
+/* Footer paragraph spacing */
+footer p {
+  margin: 16px 0;
+  padding: 0;
 }
 
-/* Hero section */
+/* === HERO SECTION === */
 .hero {
   position: relative;
   width: 100%;
+  height: 400px; /* Optional: set explicit height for consistency */
   overflow: hidden;
 }
 
 .hero img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover; /* Ensures image fills without distortion */
 }
 
-/* Overlay heading on hero */
-h1 {
+/* Overlay heading */
+.hero h1 {
   position: absolute;
   top: 20px;
+  left: 0;
   width: 100%;
-  padding: 16px;
   text-align: center;
-  opacity: 0.7;
+  padding: 16px;
+  opacity: 0.85;
   background-color: var(--accent1-color);
-  color: #fff;
-  font-size: 2.5rem;
+  color: white;
+  font-size: 2.2rem;
   z-index: 2;
 }
 
-/* Article inside main (not inside hero) */
-article img {
-  float: right;
-  width: 125px;
-  margin: 0 0 16px 16px;
+/* Overlay article inside hero */
+.hero article {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  max-width: 600px;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 12px;
   border-radius: 8px;
-  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+  z-index: 2;
 }
 
-/* Optional: Clear floats in article */
-article::after {
+/* Image inside the hero article */
+.hero article img {
+  float: right;
+  width: 125px;
+  margin: 0 0 12px 12px;
+  border-radius: 6px;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Clear float in article */
+.hero article::after {
   content: "";
   display: table;
   clear: both;
 }
 
-/* Footer styling */
+/* === FOOTER & SOCIAL MEDIA === */
 footer {
-  margin-top: 32px;
+  margin-top: 40px;
   text-align: center;
-  padding-top: 16px;
+  padding-top: 20px;
   border-top: 1px solid var(--accent1-color);
 }
 
-footer p {
-  margin-bottom: 12px;
+/* Social media nav: exact class name "socialmedia" */
+.socialmedia a {
+  text-decoration: none;
 }
 
-/* Social media icons */
-.social-media img {
+.socialmedia img {
   width: 32px;
   height: 32px;
   margin: 0 8px;
