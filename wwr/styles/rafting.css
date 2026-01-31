@@ -23,7 +23,7 @@ body {
   background-color: var(--background-color);
 }
 
-/* Center layout */
+/* Center layout container */
 header, main, footer {
   width: 840px;
   margin: 0 auto;
@@ -35,34 +35,68 @@ h1, h2 {
   color: var(--primary-color);
 }
 
-/* Consistent spacing for block elements */
-nav, p, section {
+/* Base spacing — reduced specificity to avoid overriding new layouts */
+p, section:not(.history):not(.adventures) {
   margin: 16px;
   padding: 8px;
 }
 
-/* Footer paragraph spacing */
-footer p {
-  margin: 16px 0;
+/* === HEADER: CSS GRID + FLEX NAV === */
+header {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 20px;
+  padding: 16px 0;
+  background-color: white;
+  border-bottom: 2px solid var(--primary-color);
+}
+
+header img.logo {
+  width: 180px;
+  height: auto;
+  margin: 0;
+}
+
+header nav.main-nav {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin: 0;
   padding: 0;
+}
+
+header nav.main-nav a {
+  text-decoration: none;
+  color: var(--accent1-color);
+  font-weight: bold;
+  padding: 8px 16px;
+  border: 1px solid var(--accent1-color);
+  border-radius: 4px;
+  transition: background 0.2s, color 0.2s;
+}
+
+header nav.main-nav a:hover {
+  background-color: var(--accent1-color);
+  color: white;
 }
 
 /* === HERO SECTION === */
 .hero {
   position: relative;
   width: 100%;
-  height: 400px; /* Optional: set explicit height for consistency */
+  height: 400px;
   overflow: hidden;
+  margin: 24px 0;
 }
 
 .hero img {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensures image fills without distortion */
+  object-fit: cover;
 }
 
-/* Overlay heading */
 .hero h1 {
   position: absolute;
   top: 20px;
@@ -77,7 +111,6 @@ footer p {
   z-index: 2;
 }
 
-/* Overlay article inside hero */
 .hero article {
   position: absolute;
   bottom: 20px;
@@ -90,7 +123,6 @@ footer p {
   z-index: 2;
 }
 
-/* Image inside the hero article */
 .hero article img {
   float: right;
   width: 125px;
@@ -99,29 +131,112 @@ footer p {
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* Clear float in article */
 .hero article::after {
   content: "";
   display: table;
   clear: both;
 }
 
-/* === FOOTER & SOCIAL MEDIA === */
-footer {
-  margin-top: 40px;
+/* === HISTORY SECTION (wireframe layout) === */
+section.history {
+  margin: 40px 0;
+}
+
+.history .history-content {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.history .history-content > p:first-child {
+  grid-column: 1 / 2;
+  line-height: 1.6;
+}
+
+.history .history-content > p:last-child {
+  grid-column: 3 / 4;
+  line-height: 1.6;
+}
+
+.history figure.history-img {
+  grid-column: 2 / 3;
+  justify-self: center;
+  margin: 0;
+}
+
+.history figure.history-img img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* === ADVENTURE SECTION: 5-IMAGE GRID === */
+section.adventures {
+  margin: 40px 0;
+}
+
+.adventures h2 {
   text-align: center;
-  padding-top: 20px;
+  margin-bottom: 20px;
+}
+
+.adventure-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+
+.adventure-grid figure {
+  margin: 0;
+  text-align: center;
+}
+
+.adventure-grid img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.adventure-grid figcaption {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+/* === FOOTER: SOCIAL ICONS RIGHT-ALIGNED === */
+footer {
+  margin-top: 60px;
+  padding: 24px 0;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* keeps copyright left */
   border-top: 1px solid var(--accent1-color);
 }
 
-/* Social media nav: exact class name "socialmedia" */
-.socialmedia a {
+footer p {
+  margin: 0 0 12px 0;
+  padding: 0;
+  font-size: 0.95rem;
+}
+
+footer nav.socialmedia {
+  margin-left: auto; /* pushes nav to the right */
+  display: flex;
+  gap: 12px;
+}
+
+footer nav.socialmedia a {
   text-decoration: none;
 }
 
-.socialmedia img {
-  width: 32px;
-  height: 32px;
-  margin: 0 8px;
-  vertical-align: middle;
+footer nav.socialmedia img {
+  width: 36px;
+  height: 36px;
 }
