@@ -2,11 +2,13 @@
 
 /* Define only the CSS variables that are actually used */
 :root {
-  --primary-color: #055a05;       /* Dark green */
-  --accent1-color: #102e3a;       /* Deep teal */
-  --background-color: #ecf0f1;    /* Light gray background */
+  --primary-color: #055a05;
+  --accent1-color: #102e3a;
+  --background-color: #ecf0f1;
   --heading-font: 'Georgia', serif;
   --body-font: 'Arial', sans-serif;
+  --white: #ffffff;
+  --black: #000000;
 }
 
 /* Reset box model */
@@ -106,7 +108,7 @@ header nav.main-nav a:hover {
   padding: 16px;
   opacity: 0.85;
   background-color: var(--accent1-color);
-  color: white;
+  color: var(--white);
   font-size: 2.2rem;
   z-index: 2;
 }
@@ -117,7 +119,7 @@ header nav.main-nav a:hover {
   left: 20px;
   right: 20px;
   max-width: 600px;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(var(--white), 0.9);
   padding: 12px;
   border-radius: 8px;
   z-index: 2;
@@ -128,7 +130,7 @@ header nav.main-nav a:hover {
   width: 125px;
   margin: 0 0 12px 12px;
   border-radius: 6px;
-  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 1px 4px rgba(var(--black), 0.2);
 }
 
 .hero article::after {
@@ -170,7 +172,7 @@ section.history {
   height: 180px;
   object-fit: cover;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 8px rgba(var(--black), 0.15);
 }
 
 /* === ADVENTURE SECTION: 5-IMAGE GRID === */
@@ -199,7 +201,7 @@ section.adventures {
   height: 120px;
   object-fit: cover;
   border-radius: 6px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(var(--black), 0.1);
 }
 
 .adventure-grid figcaption {
