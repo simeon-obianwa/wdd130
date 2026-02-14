@@ -1,48 +1,54 @@
 /* rafting.css */
-/* ========================================
+/* 
+  ========================================
    WHITE WATER RAFTING COMPANY
-   Minimal, Maintainable CSS
+   Complete Stylesheet
    ======================================== */
 
 :root {
-  /* SINGLE COLOR SYSTEM - NO DUPLICATIONS */
-  --primary: #055a05;      /* Green: headings, buttons, accents */
-  --accent: #102e3a;       /* Teal: body text, borders */
-  --light: #ecf0f1;        /* Background */
-  --white: #ffffff;        /* Cards, inputs */
-  --border: #d1d8dc;       /* Subtle borders */
-  
-  /* ESSENTIAL TYPOGRAPHY */
-  --heading: 'Georgia', serif;
-  --body: 'Arial', sans-serif;
+  --primary: #055a05;
+  /* Green: headings, buttons, accents */
+  --accent: #102e3a;
+  /* Teal: body text, borders */
+  --light: #ecf0f1;
+  /* Background */
+  --white: #ffffff;
+  /* Cards, inputs */
+  --border: #d1d8dc;
+  /* Subtle borders */
+  --shadow: rgba(0, 0, 0, 0.1);
+  --shadow-hover: rgba(0, 0, 0, 0.15);
 }
 
-/* RESET */
+/* BASE STYLES */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* BASE */
 body {
-  font-family: var(--body);
+  font-family: 'Arial', sans-serif;
   color: var(--accent);
   background-color: var(--light);
   line-height: 1.6;
   font-size: 16px;
 }
 
-/* LAYOUT - CONSISTENT WIDTH */
-header, main, footer {
+/* LAYOUT */
+header,
+main,
+footer {
   width: min(100%, 840px);
   margin: 0 auto;
   padding: 0 1rem;
 }
 
 /* TYPOGRAPHY */
-h1, h2, h3 {
-  font-family: var(--heading);
+h1,
+h2,
+h3 {
+  font-family: 'Georgia', serif;
   color: var(--primary);
   font-weight: bold;
 }
@@ -59,6 +65,12 @@ h2 {
   font-size: 1.8rem;
   margin: 2rem 0 1.5rem;
   text-align: center;
+}
+
+h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: var(--primary);
 }
 
 p {
@@ -108,304 +120,7 @@ header {
 
 /* MAIN */
 main {
-  padding: 3rem 0 2rem;
-}
-
-/* HERO SECTION (ABOUT/TRIPS ONLY) */
-.hero {
-  position: relative;
-  height: 400px;
-  margin: 2rem 0;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-.hero img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.hero h1 {
-  position: absolute;
-  top: 1rem;
-  width: 100%;
-  text-align: center;
-  background-color: rgba(16, 46, 58, 0.85);
-  color: var(--white);
-  padding: 8px 16px;
-  font-size: 2.2rem;
-  margin: 0;
-  border: none;
-  z-index: 2;
-}
-
-.hero article {
-  position: absolute;
-  bottom: 1rem;
-  left: 1rem;
-  right: 1rem;
-  max-width: 600px;
-  background-color: rgba(255, 255, 255, 0.92);
-  padding: 12px;
-  border-radius: 8px;
-  z-index: 2;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-.hero article img {
-  float: right;
-  width: 125px;
-  margin: 0 0 12px 12px;
-  border-radius: 6px;
-  box-shadow: 1px 1px 4px rgba(0,0,0,0.2);
-}
-
-/* HISTORY SECTION */
-.history {
-  margin: 3rem 0;
-}
-
-.history-content {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  gap: 24px;
-  align-items: start;
-}
-
-.history-content > p:first-child {
-  grid-column: 1 / 2;
-}
-
-.history-content > p:last-child {
-  grid-column: 3 / 4;
-}
-
-.history-img {
-  grid-column: 2 / 3;
-  justify-self: center;
-  margin: 0;
-}
-
-.history-img img {
-  width: 180px;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-/* ADVENTURES SECTION */
-.adventures {
-  margin: 3rem 0;
-}
-
-.adventure-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 16px;
-}
-
-.adventure-grid figure {
-  margin: 0;
-  text-align: center;
-}
-
-.adventure-grid img {
-  width: 100%;
-  height: 120px;
-  object-fit: cover;
-  border-radius: 6px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.adventure-grid figcaption {
-  margin-top: 8px;
-  font-weight: bold;
-  font-size: 0.85rem;
-  color: var(--primary);
-}
-
-/* CONTACT PAGE */
-
-/* Company Info */
-.company-info {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  margin-bottom: 3rem;
-}
-
-.contact-details {
-  flex: 1;
-  min-width: 300px;
-  background: var(--white);
-  padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  line-height: 1.7;
-}
-
-.map-container {
-  flex: 1;
-  min-width: 300px;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  height: 300px;
-}
-
-.map-container iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
-/* Contact Form */
-.contact-form {
-  max-width: 650px;
-  margin: 0 auto 3rem;
-}
-
-.form-group {
-  margin-bottom: 1.5rem;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-weight: bold;
-  color: var(--accent);
-}
-
-.form-group input[type="text"],
-.form-group input[type="email"],
-.form-group textarea {
-  width: 100%;
-  padding: 0.8rem;
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  font-family: var(--body);
-  font-size: 1rem;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-  outline: none;
-  border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(5, 90, 5, 0.15);
-}
-
-.form-group textarea {
-  min-height: 120px;
-  resize: vertical;
-}
-
-.radio-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-  margin-top: 0.3rem;
-  padding-left: 0.2rem;
-}
-
-.radio-group label {
-  font-weight: normal;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.radio-group input[type="radio"] {
-  cursor: pointer;
-  accent-color: var(--primary);
-}
-
-.checkbox-group {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-top: 0.3rem;
-}
-
-.checkbox-group input[type="checkbox"] {
-  cursor: pointer;
-  accent-color: var(--primary);
-}
-
-.checkbox-group label {
-  font-weight: normal;
-  cursor: pointer;
-  margin: 0;
-}
-
-.submit-btn {
-  background: var(--primary);
-  color: var(--white);
-  border: none;
-  padding: 1rem;
-  font-size: 1.1rem;
-  font-weight: bold;
-  border-radius: 4px;
-  cursor: pointer;
-  width: 100%;
-  transition: all 0.25s;
-  margin-top: 0.5rem;
-}
-
-.submit-btn:hover {
-  background: #034503;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-}
-
-/* Employee Profiles */
-.employee-profiles h2 {
-  margin-top: 3rem;
-}
-
-.profiles-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 2rem;
-  margin-top: 1.5rem;
-}
-
-.profile {
-  text-align: center;
-  background: var(--white);
-  padding: 1.5rem 1rem;
-  border-radius: 10px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-}
-
-.profile img {
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid var(--primary);
-  margin-bottom: 1rem;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.profile figcaption {
-  font-weight: bold;
-  color: var(--primary);
-  margin-top: 0.5rem;
-  line-height: 1.4;
-}
-
-.profile .title {
-  display: block;
-  font-weight: normal;
-  color: var(--accent);
-  font-size: 0.95rem;
-  margin-top: 0.2rem;
+  padding: 2rem 0;
 }
 
 /* FOOTER */
@@ -441,49 +156,822 @@ footer .socialmedia img {
   height: 100%;
 }
 
-/* RESPONSIVE */
+/* ========================================
+   HOME PAGE STYLES
+   ======================================== */
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  height: 500px;
+  margin: 2rem 0;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7));
+  z-index: 1;
+}
+
+.hero-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/hero-home.jpg');
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: var(--white);
+  z-index: 2;
+  padding: 2rem;
+  max-width: 800px;
+}
+
+.hero-overlay h1 {
+  font-size: 3.5rem;
+  margin: 0 0 1rem;
+  padding: 0;
+  border: none;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-overlay p {
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Newsletter Section */
+.newsletter-section {
+  background: linear-gradient(135deg, var(--primary) 0%, #034503 100%);
+  padding: 3rem 0;
+  margin: 3rem 0;
+  border-radius: 8px;
+}
+
+.newsletter-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  color: var(--white);
+}
+
+.newsletter-container h2 {
+  color: var(--white);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.newsletter-container p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.form-row input {
+  padding: 0.8rem 1rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  flex: 1;
+  min-width: 200px;
+}
+
+.form-row button {
+  background: var(--white);
+  color: var(--primary);
+  border: none;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.25s;
+  white-space: nowrap;
+}
+
+.form-row button:hover {
+  background: #f0f0f0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px var(--shadow-hover);
+}
+
+/* Features Grid */
+.features-section {
+  margin: 3rem 0;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.feature-card {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px var(--shadow);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px var(--shadow-hover);
+}
+
+.feature-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 6px var(--shadow);
+}
+
+.feature-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+.feature-card p {
+  color: var(--accent);
+}
+
+/* Call to Action */
+.cta-section {
+  background: linear-gradient(135deg, var(--accent) 0%, #0c232d 100%);
+  padding: 3rem 0;
+  margin: 3rem 0;
+  border-radius: 8px;
+}
+
+.cta-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  color: var(--white);
+}
+
+.cta-container h2 {
+  color: var(--white);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.cta-container p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* ========================================
+   TRIPS PAGE STYLES
+   ======================================== */
+
+/* Trip Categories */
+.trip-categories {
+  margin: 2rem 0;
+}
+
+.trip-detail {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px var(--shadow);
+  align-items: center;
+}
+
+.trip-image {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+.trip-image img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+}
+
+.trip-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.trip-meta {
+  font-size: 0.95rem;
+  color: var(--accent);
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+.trip-highlights {
+  list-style: none;
+  padding-left: 0;
+}
+
+.trip-highlights li {
+  padding-left: 1.5rem;
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+
+.trip-highlights li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-weight: bold;
+}
+
+.trip-price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--primary);
+  margin-top: 1rem;
+}
+
+/* Trip Table */
+.trip-table-section {
+  margin: 3rem 0;
+}
+
+.table-container {
+  overflow-x: auto;
+  background: var(--white);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+.trip-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+.trip-table th,
+.trip-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+.trip-table th {
+  background-color: var(--primary);
+  color: var(--white);
+  font-weight: bold;
+  font-family: 'Georgia', serif;
+}
+
+.trip-table tr:nth-child(even) {
+  background-color: rgba(5, 90, 5, 0.03);
+}
+
+.trip-table tr:hover {
+  background-color: rgba(5, 90, 5, 0.08);
+}
+
+.trip-table td {
+  color: var(--accent);
+}
+
+/* Contact CTA */
+.contact-cta {
+  background: linear-gradient(135deg, var(--primary) 0%, #034503 100%);
+  padding: 3rem 0;
+  margin: 3rem 0;
+  border-radius: 8px;
+}
+
+.contact-cta .cta-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  color: var(--white);
+}
+
+.contact-cta .cta-container h2 {
+  color: var(--white);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.contact-cta .cta-container p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* ========================================
+   COMMON COMPONENTS
+   ======================================== */
+
+/* Buttons */
+.cta-button,
+.submit-btn {
+  display: inline-block;
+  background: var(--primary);
+  color: var(--white);
+  text-decoration: none;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: all 0.25s;
+  cursor: pointer;
+  border: none;
+  text-align: center;
+}
+
+.cta-button:hover,
+.submit-btn:hover {
+  background: #034503;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px var(--shadow-hover);
+}
+
+.cta-button.large {
+  padding: 1.2rem 3rem;
+  font-size: 1.3rem;
+}
+
+/* ========================================
+   CONTACT PAGE STYLES
+   ======================================== */
+
+/* Company Info */
+.company-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.contact-details {
+  flex: 1;
+  min-width: 300px;
+  background: var(--white);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px var(--shadow);
+  line-height: 1.7;
+}
+
+.map-container {
+  flex: 1;
+  min-width: 300px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px var(--shadow);
+  height: 300px;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Contact Form */
+.contact-form {
+  max-width: 650px;
+  margin: 0 auto 3rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: var(--accent);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-family: 'Arial', sans-serif;
+  font-size: 1rem;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(5, 90, 5, 0.15);
+}
+
+.form-group textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+.radio-group input[type="radio"] {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  appearance: none;
+  border: 2px solid var(--border);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.radio-group input[type="radio"]:checked {
+  background-color: var(--primary);
+}
+
+.radio-group input[type="radio"]:checked::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--white);
+}
+
+.radio-group label {
+  font-weight: normal;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  appearance: none;
+  border: 2px solid var(--border);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.checkbox-group input[type="checkbox"]:checked {
+  background-color: var(--primary);
+}
+
+.checkbox-group input[type="checkbox"]:checked::after {
+  content: "✓";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--white);
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.checkbox-group label {
+  font-weight: normal;
+  cursor: pointer;
+  margin: 0;
+}
+
+/* Employee Profiles */
+.employee-profiles h2 {
+  margin-top: 3rem;
+}
+
+.profiles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.profile {
+  text-align: center;
+}
+
+.profile img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border: 3px solid var(--primary);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  background-color: #f0f0f0;
+}
+
+.profile figcaption {
+  font-weight: bold;
+  color: var(--primary);
+  margin-top: 0.5rem;
+}
+
+.profile .title {
+  display: block;
+  font-weight: normal;
+  color: var(--accent);
+  font-size: 0.95rem;
+  margin-top: 0.2rem;
+}
+
+/* ========================================
+   ABOUT PAGE STYLES
+   ======================================== */
+
+/* Hero Section (About/Trips) */
+.hero {
+  position: relative;
+  height: 400px;
+  margin: 2rem 0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero h1 {
+  position: absolute;
+  top: 1rem;
+  width: 100%;
+  text-align: center;
+  background-color: rgba(16, 46, 58, 0.85);
+  color: var(--white);
+  padding: 8px 16px;
+  font-size: 2.2rem;
+  margin: 0;
+  border: none;
+  z-index: 2;
+}
+
+.hero article {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  max-width: 600px;
+  background-color: rgba(255, 255, 255, 0.92);
+  padding: 12px;
+  border-radius: 8px;
+  z-index: 2;
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+.hero article img {
+  float: right;
+  width: 125px;
+  margin: 0 0 12px 12px;
+  border-radius: 6px;
+  box-shadow: 1px 1px 4px var(--shadow);
+}
+
+/* History Section */
+.history {
+  margin: 3rem 0;
+}
+
+.history-content {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.history-content > p:first-child {
+  grid-column: 1 / 2;
+}
+
+.history-content > p:last-child {
+  grid-column: 3 / 4;
+}
+
+.history-img {
+  grid-column: 2 / 3;
+  justify-self: center;
+  margin: 0;
+}
+
+.history-img img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px var(--shadow);
+}
+
+/* Adventures Section */
+.adventures {
+  margin: 3rem 0;
+}
+
+.adventure-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+
+.adventure-grid figure {
+  margin: 0;
+  text-align: center;
+}
+
+.adventure-grid img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px var(--shadow);
+}
+
+.adventure-grid figcaption {
+  margin-top: 8px;
+  font-weight: bold;
+  font-size: 0.85rem;
+  color: var(--primary);
+}
+
+/* ========================================
+   RESPONSIVE STYLES
+   ======================================== */
+
 @media (max-width: 768px) {
+
+  /* Header */
+  header {
+    grid-template-columns: 1fr auto;
+    gap: 1rem;
+  }
+
+  .main-nav {
+    justify-content: flex-start;
+  }
+
+  /* Hero Section */
+  .hero-section {
+    height: 400px;
+  }
+
+  .hero-overlay h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-overlay p {
+    font-size: 1.1rem;
+  }
+
+  /* Trip Details */
+  .trip-detail {
+    grid-template-columns: 1fr;
+  }
+
+  /* Company Info */
   .company-info {
     flex-direction: column;
   }
-  
+
   .map-container {
     height: 250px;
   }
-  
-  .profiles-grid {
+
+  /* Features Grid */
+  .features-grid {
     grid-template-columns: 1fr;
   }
-  
+
+  /* History */
   .history-content {
     grid-template-columns: 1fr;
   }
-  
+
   .history-img {
     grid-column: 1 / -1;
     justify-self: center;
   }
-  
+
+  /* Adventures */
   .adventure-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Newsletter Form */
+  .newsletter-form,
+  .form-row {
+    flex-direction: column;
+  }
+
+  .form-row input {
+    min-width: 100%;
+  }
+
+  /* CTA Button */
+  .cta-button,
+  .submit-btn {
+    width: 100%;
+  }
+
+  /* Profiles */
+  .profiles-grid {
+    grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 480px) {
+
+  /* Typography */
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  /* Hero */
+  .hero-section {
+    height: 300px;
+  }
+
+  .hero {
+    height: 300px;
+  }
+
+  /* Adventures */
   .adventure-grid {
     grid-template-columns: 1fr;
   }
-  
-  h1 {
-    font-size: 2rem;
+
+  /* Trip Table */
+  .trip-table {
+    font-size: 0.9rem;
   }
-  
-  .hero {
-    height: 320px;
-  }
-  
-  .hero h1 {
-    font-size: 1.8rem;
-    padding: 8px;
+
+  .trip-table th,
+  .trip-table td {
+    padding: 0.6rem;
   }
 }

@@ -1,34 +1,112 @@
-<!DOCTYPE html>
-<html lang="en-US">
+<!doctype html>
+<html lang="en">
+
 <head>
-   <meta charset="UTF-8">
+   <meta charset="utf-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Simeon Obianwa | WDD 130</title>
-   <meta name="description" content="WDD 130 student portfolio by Simeon Obianwa, a software developer from Lagos, Nigeria.">
+   <meta name="description"
+     content="Experience the thrill of white water rafting with White Water Rafting Company. Book your adventure today and conquer the rapids!">
    <meta name="author" content="Simeon Obianwa">
-   <link rel="stylesheet" href="styles/styles.css">
+   <title>White Water Rafting Company | Home</title>
+   <link rel="stylesheet" href="styles/rafting.css">
 </head>
 
 <body>
    <header>
-      <nav>
-          <a href="#">Home</a>
-          <a href="wwr/">Rafting Website</a>
+      <img src="images/rafting-logo.png" alt="White Water Rafting Company Logo" class="logo">
+      <nav class="main-nav">
+         <a href="index.html">Home</a>
+         <a href="about.html">About Us</a>
+         <a href="trips.html">Trips</a>
+         <a href="contact.html">Contact Us</a>
       </nav>
    </header>
+
    <main>
-      <h1>Simeon Obianwa | WDD 130</h1>
-      <img src="images/profile.jpg" alt="Hello, my name is Simeon Obianwa" width="200">
-      <p>Hello! My name is Simeon Obianwa and I am from Lagos, Nigeria. I'm a software developer.</p>
+      <!-- HERO SECTION -->
+      <section class="hero-section">
+         <div class="hero-overlay">
+            <h1>Conquer the Rapids</h1>
+            <p>Experience the ultimate white water adventure with expert guides</p>
+            <a href="trips.html" class="cta-button">Book Your Trip Now</a>
+         </div>
+      </section>
+
+      <!-- NEWSLETTER SECTION -->
+      <section class="newsletter-section">
+         <div class="newsletter-container">
+            <h2>Join Our Adventure Community</h2>
+            <p>Get exclusive deals, trip updates, and rafting tips delivered to your inbox</p>
+            <form class="newsletter-form" action="#" method="post">
+               <div class="form-row">
+                  <input type="text" name="name" placeholder="Your Name" required>
+                  <input type="email" name="email" placeholder="Your Email" required>
+                  <button type="submit" class="submit-btn">Subscribe</button>
+               </div>
+            </form>
+         </div>
+      </section>
+
+      <!-- FEATURES GRID -->
+      <section class="features-section">
+         <h2>Why Choose White Water Rafting Company?</h2>
+         <div class="features-grid">
+            <article class="feature-card">
+               <img src="images/feature-safety.jpg" alt="Safety First">
+               <h3>Safety First</h3>
+               <p>Our certified guides prioritize your safety with top-notch equipment and extensive
+                  training on every rapid.</p>
+            </article>
+
+            <article class="feature-card">
+               <img src="images/feature-scenery.jpg" alt="Breathtaking Scenery">
+               <h3>Breathtaking Scenery</h3>
+               <p>Experience nature's beauty as you navigate through stunning canyons, waterfalls,
+                  and pristine wilderness.</p>
+            </article>
+
+            <article class="feature-card">
+               <img src="images/feature-adventure.jpg" alt="Thrilling Adventure">
+               <h3>Thrilling Adventure</h3>
+               <p>From gentle floats to Class V rapids, we offer experiences for every skill level
+                  and adrenaline seeker.</p>
+            </article>
+
+            <article class="feature-card">
+               <img src="images/feature-expertise.jpg" alt="Expert Guides">
+               <h3>Expert Guides</h3>
+               <p>Our passionate guides bring years of experience and local knowledge to ensure your
+                  trip is unforgettable.</p>
+            </article>
+         </div>
+      </section>
+
+      <!-- CALL TO ACTION -->
+      <section class="cta-section">
+         <div class="cta-container">
+            <h2>Ready for Your Next Adventure?</h2>
+            <p>Explore our amazing rafting trips and find the perfect adventure for you</p>
+            <a href="trips.html" class="cta-button large">View All Trips</a>
+         </div>
+      </section>
    </main>
 
-   <aside>
-   <h2>Nigeria</h2>
-   <img src="images/nigeria.jpg" alt="Oil palm fruits, a symbol of Nigeria's agriculture" width="200">
-   <p>Nigeria is a vibrant West African country known for its rich cultural diversity, bustling cities like Lagos, and abundant natural resources. It is home to over 250 ethnic groups and is often referred to as the "Giant of Africa" due to its large population and economy.</p>
-</aside>
    <footer>
-      <p>©2026 | Simeon Obianwa | Lagos, Nigeria</p>
+      <p>&copy; 2026 White Water Rafting Company | Simeon Obianwa</p>
+      <nav class="socialmedia">
+         <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"
+           aria-label="Facebook">
+            <img src="images/facebook-icon.png" alt="">
+         </a>
+         <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+           aria-label="Instagram">
+            <img src="images/instagram-icon.png" alt="">
+         </a>
+         <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
+           aria-label="LinkedIn">
+            <img src="images/linkedin-icon.png" alt="">
+         </a>
+      </nav>
    </footer>
 </body>
 
